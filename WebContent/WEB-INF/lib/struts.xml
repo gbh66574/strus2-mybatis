@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="default" extends="struts-default" namespace="/">
+		<action name="Login" class="com.entor.action.HelloAction" method="execute">
+		<result name="success">/success.jsp</result>
+		<result name="fail">/fail.jsp</result>
+		</action>
+		<action name="add" class="com.entor.action.HelloAction" method="add">
+		<!--result属性type取值，
+		  1.dispatcher默认取值，值得是请求转发到jsp页面
+		  2.redirect指的是重定向到jsp页面
+		  3.redirectAction指的是重定向到另一个请求
+		  4.chain指的是请求转发到另一个请求
+		  
+		  -->
+		<result name="success" type="dispatcher"><!--方法二 queryAll -->
+		<!--方法一默认 update.jsp -->
+	<!-- 方法三四	<param name="actionName">queryAll</param> -->
+		</result>
+		</action>
+		<action name="queryAll" class="com.entor.action.HelloAction" method="queryAll">
+		<result name="success">/update.jsp</result>
+		</action>
+		
+		<action name="queryById" class="com.entor.action.HelloAction" method="queryById">
+		<result name="success">/update.jsp</result>
+		</action>
+	</package>
+</struts>

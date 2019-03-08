@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!-- 配置类型别名 -->
+<typeAliases>
+<typeAlias type="com.entor.entity.Student" alias="Student"/>
+</typeAliases>
+
+
+	<!--配置数据库环境，可以有多个环境，指定一个默认的环境 -->
+	<environments default="mysql">
+		<environment id="mysql">
+			<!--指定事务管理器类型 -->
+			<transactionManager type="JDBC" />
+			<!--指定数据库类型 -->
+			<dataSource type="POOLED">
+				<!--数据库驱动类 -->
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<!--数据库连接字符串 -->
+				<property name="url"
+					value="jdbc:mysql://localhost:3306/student" />
+				<!--数据库连接帐号 -->
+				<property name="username" value="root" />
+				<!--数据库连接密码 -->
+				<property name="password" value="root" />
+			</dataSource>
+		</environment>
+	</environments>
+	<!--配置映射文件  -->
+	<mappers>
+	<mapper resource="com/entor/mapper/StudentMapper.xml"/>
+	</mappers>
+</configuration>
