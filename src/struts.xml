@@ -26,7 +26,7 @@
 		<interceptors>
 			<!-- 配置自定义拦截器 -->
 			<interceptor name="testInterceptor" class="com.entor.Interceptor.TestInterceptor"/>
-			<interceptor name="sessionInterceptor" class="com.entor.interceptor.SessionInterceptor">
+			<interceptor name="sessionInterceptor" class="com.entor.Interceptor.SessionInterceptor">
 				<param name="excludeMethods">login</param>
 			</interceptor>
 			<interceptor-stack name="myInterceptor">
